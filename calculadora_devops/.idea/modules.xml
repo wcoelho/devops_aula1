@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/calculadora_devops.iml" filepath="$PROJECT_DIR$/calculadora_devops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/calculadora_devops.iml" filepath="$PROJECT_DIR$/.idea/calculadora_devops.iml" />
     </modules>
   </component>
 </project>
