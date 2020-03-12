@@ -35,13 +35,11 @@ public class Main {
         }
     }
 
-    private double Subtrai(double a, double b)
-    {
-        return calculo.somar(a, b);
+    private double Subtrai(double a, double b) {
+        return Calculo.somar(a, b);
     }
 
-    private double Adiciona(double a, double b)
-    {
-        return calculo.somar(a, b);
+    private double Adiciona(double a, double b) {
+        return Calculo.somar(a, b);
     }
 }
