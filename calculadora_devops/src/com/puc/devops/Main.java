@@ -46,7 +46,7 @@ public class Main {
             System.out.println("Digite " + !opcao.Equals("6")? "o primeiro número " : "o número: ");
             String a = br.readLine();
 
-            if(!opcao.Equals("6"))
+            if(!opcao.equals("6"))
             {
                 System.out.println("Digite segundo numero: ");
                 String b = br.readLine();
