@@ -39,52 +39,55 @@ public class Main {
     }
 
     private static void executarOpcao(String opcao) {
+        try {
+            InputStreamReader in = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader(in);
+
+            System.out.println("Digite " + !opcao.Equals("6")? "o primeiro número " : "o número: ");
+            String a = br.readLine();
+
+            if(!opcao.Equals("6"))
+            {
+                System.out.println("Digite segundo numero: ");
+                String b = br.readLine();
+            }
+
+            double resultado = 0;
+
+        } catch (Exception e) {
+            System.err.println("Opcao invalida");
+        }
         switch (opcao) {
             case "1":
-                try {
-                    InputStreamReader in = new InputStreamReader(System.in);
-                    BufferedReader br = new BufferedReader(in);
-
-                    System.out.println("Digite primeiro numero: ");
-                    String a = br.readLine();
-
-                    System.out.println("Digite segundo numero: ");
-                    String b = br.readLine();
-                    double resultado = Calculo.somar(Double.parseDouble(a), Double.parseDouble(b));
-
-                    System.out.println(" ");
-                    System.out.println("O Resultado e: " + resultado);
-                    System.out.println(" ");
-
-                } catch (Exception e) {
-                    System.err.println("Opcao invalida");
-                }
-
+                resultado = Calculo.somar(Double.parseDouble(a), Double.parseDouble(b));
                 break;
             case "2":
-                try {
-                    InputStreamReader in = new InputStreamReader(System.in);
-                    BufferedReader br = new BufferedReader(in);
-
-                    System.out.println("Digite primeiro numero: ");
-                    String a = br.readLine();
-
-                    System.out.println("Digite segundo numero: ");
-                    String b = br.readLine();
-                    double resultado = Calculo.subtrair(Double.parseDouble(a), Double.parseDouble(b));
-
-                    System.out.println(" ");
-                    System.out.println("O Resultado e: " + resultado);
-                    System.out.println(" ");
-
-                } catch (Exception e) {
-                    System.err.println("Opcao invalida");
-                }
-
+                resultado = Calculo.subtrair(Double.parseDouble(a), Double.parseDouble(b));
                 break;
-
+            case "3":
+                resultado = Calculo.multiplicar(Double.parseDouble(a), Double.parseDouble(b));
+                break;
+            case "4":
+                resultado = Calculo.dividir(Double.parseDouble(a), Double.parseDouble(b));
+                break;
+            case "5":
+                resultado = Calculo.percentual(Double.parseDouble(a), Double.parseDouble(b));
+                break;
+            case "6":
+                resultado = Calculo.raiz(Double.parseDouble(a));
+                break;
+            case "7":
+                resultado = Calculo.potencia(Double.parseDouble(a), Double.parseDouble(b));
+                break;
+            case "8":
+                resultado = Calculo.media(Double.parseDouble(a), Double.parseDouble(b));
+                break;            
             default:
                 System.err.println("Ainda nao implementado");
         }
+        
+        System.out.println(" ");
+        System.out.println("O Resultado e: " + resultado);
+        System.out.println(" ");
     }
 }
