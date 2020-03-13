@@ -1,15 +1,15 @@
 package com.puc.devops;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.InputStreamReader;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        boolean exit = false;
         String opcao = "";
-        while (!opcao.equals("z")) {
+        while (!exit) {
             System.out.println("");
             System.out.println("================================== Bem vindo a Calculadora Van Gogh ===================================");
             System.out.println("Escolha a opcao desejada:");
@@ -30,7 +30,11 @@ public class Main {
                 InputStreamReader in = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(in);
                 opcao = br.readLine();
-                executarOpcao(opcao);
+                if(opcao.equals("z"))
+                    exit = true;
+                else
+                    executarOpcao(opcao);
+                    
             } catch (Exception e) {
                 System.err.println("Opcao invalida");
             }
@@ -39,20 +43,23 @@ public class Main {
     }
 
     private static void executarOpcao(String opcao) {
+
+        String a = "0";
+        String b = "0";
+        double resultado = 0;
+
         try {
             InputStreamReader in = new InputStreamReader(System.in);
             BufferedReader br = new BufferedReader(in);
 
-            System.out.println("Digite " + !opcao.equals("6")? "o primeiro número " : "o número: ");
-            String a = br.readLine();
+            System.out.println("Digite " + ((!opcao.equals("6"))? "o primeiro número " : "o número: "));
+            a = br.readLine();
 
             if(!opcao.equals("6"))
             {
                 System.out.println("Digite segundo numero: ");
-                String b = br.readLine();
-            }
-
-            double resultado = 0;
+                b = br.readLine();
+            }            
 
         } catch (Exception e) {
             System.err.println("Opcao invalida");
@@ -81,7 +88,7 @@ public class Main {
                 break;
             case "8":
                 resultado = Calculo.media(Double.parseDouble(a), Double.parseDouble(b));
-                break;            
+                break;                   
             default:
                 System.err.println("Ainda nao implementado");
         }
