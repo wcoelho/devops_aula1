@@ -10,11 +10,12 @@ public class Main {
 
         String opcao = "";
         while (!opcao.equals("z")) {
-            System.out.println("Bem vindo a Calculadora Van Gogh");
+            System.out.println("");
+            System.out.println("================================== Bem vindo a Calculadora Van Gogh ===================================");
             System.out.println("Escolha a opcao desejada:");
 
             System.out.println("1 - Soma");
-            System.out.println("2 - Adicao");
+            System.out.println("2 - Subtracao");
             System.out.println("3 - Multiplicacao");
             System.out.println("4 - Divisao");
 
@@ -23,11 +24,13 @@ public class Main {
             System.out.println("7 - Potencia");
             System.out.println("8 - Media");
 
+            System.out.println("Aperte 'z' para sair");
+
             try {
                 InputStreamReader in = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(in);
                 opcao = br.readLine();
-                System.out.println("Opcao escolhida foi: " + opcao);
+                executarOpcao(opcao);
             } catch (Exception e) {
                 System.err.println("Opcao invalida");
             }
@@ -35,11 +38,53 @@ public class Main {
         }
     }
 
-    private double Subtrai(double a, double b) {
-        return Calculo.somar(a, b);
-    }
+    private static void executarOpcao(String opcao) {
+        switch (opcao) {
+            case "1":
+                try {
+                    InputStreamReader in = new InputStreamReader(System.in);
+                    BufferedReader br = new BufferedReader(in);
 
-    private double Adiciona(double a, double b) {
-        return Calculo.somar(a, b);
+                    System.out.println("Digite primeiro numero: ");
+                    String a = br.readLine();
+
+                    System.out.println("Digite segundo numero: ");
+                    String b = br.readLine();
+                    double resultado = Calculo.somar(Double.parseDouble(a), Double.parseDouble(b));
+
+                    System.out.println(" ");
+                    System.out.println("O Resultado e: " + resultado);
+                    System.out.println(" ");
+
+                } catch (Exception e) {
+                    System.err.println("Opcao invalida");
+                }
+
+                break;
+            case "2":
+                try {
+                    InputStreamReader in = new InputStreamReader(System.in);
+                    BufferedReader br = new BufferedReader(in);
+
+                    System.out.println("Digite primeiro numero: ");
+                    String a = br.readLine();
+
+                    System.out.println("Digite segundo numero: ");
+                    String b = br.readLine();
+                    double resultado = Calculo.subtrair(Double.parseDouble(a), Double.parseDouble(b));
+
+                    System.out.println(" ");
+                    System.out.println("O Resultado e: " + resultado);
+                    System.out.println(" ");
+
+                } catch (Exception e) {
+                    System.err.println("Opcao invalida");
+                }
+
+                break;
+
+            default:
+                System.err.println("Ainda nao implementado");
+        }
     }
 }
