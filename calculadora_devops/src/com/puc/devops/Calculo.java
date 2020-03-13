@@ -1,13 +1,13 @@
 package com.puc.devops;
 
-public static class Calculo {
+public class Calculo {
 
-    private static double subtrair() {
+    public static double subtrair(double a, double b) {
         System.out.println("Subtraindo: " + a + "-" + b);
         return (a - b);
     }
 
-    private static double somar() {
+    public static double somar(double a, double b) {
         System.out.println("Somando: " + a + "+" + b);
         return (a + b);
     }

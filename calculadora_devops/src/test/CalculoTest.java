@@ -29,8 +29,8 @@ public class CalculoTest {
     }
 
     @Test
-   	public void retornaSubtracaoComSucesso_QuandoPassadosDoisNumeros() {
-        Double resultado = Calculo.dividir(4, 2);
+   	public void retornaSubtracaoComSucesso_QuandoPassadosDoisNumeros2() {
+        Double resultado = Calculo.dividir(2, 2);
         assertEquals(Double.valueOf(2), resultado);
     }
     
