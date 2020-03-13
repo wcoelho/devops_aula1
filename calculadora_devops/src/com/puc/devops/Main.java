@@ -43,7 +43,7 @@ public class Main {
             InputStreamReader in = new InputStreamReader(System.in);
             BufferedReader br = new BufferedReader(in);
 
-            System.out.println("Digite " + !opcao.Equals("6")? "o primeiro número " : "o número: ");
+            System.out.println("Digite " + !opcao.equals("6")? "o primeiro número " : "o número: ");
             String a = br.readLine();
 
             if(!opcao.equals("6"))
