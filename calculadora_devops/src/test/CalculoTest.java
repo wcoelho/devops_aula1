@@ -30,7 +30,7 @@ public class CalculoTest {
 
     @Test
    	public void retornaSubtracaoComSucesso_QuandoPassadosDoisNumeros2() {
-        Double resultado = Calculo.dividir(2, 2);
+        Double resultado = Calculo.dividir(4, 2);
         assertEquals(Double.valueOf(2), resultado);
     }
     
